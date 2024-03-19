@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: tugas-1
-- file: materi-1
-- file: tugas-2
+- file: Tutorial Pembuatan Web Statis
+- file: Sistem Persamaan linier
+- file: Matriks

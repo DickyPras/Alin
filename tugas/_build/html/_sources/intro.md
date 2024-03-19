@@ -1,6 +1,10 @@
 # SELAMAT DATANG 
 
-Perkenalkan saya Dicky Prasetyo Mahasiswa Teknik Informatika, 23-166
+Nama = Dicky Prasetyo 
+
+Nim  = 230411100166
+
+Prodi= Teknik Informatika
 
 ```{tableofcontents}
 ```

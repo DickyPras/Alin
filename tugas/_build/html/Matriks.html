@@ -57,10 +57,10 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'tugas-2';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Eliminasi Gaussian" href="materi-1.html" />
+    <link rel="prev" title="Tugas 1" href="Tutorial%20Pembuatan%20Web%20Statis.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -149,8 +149,8 @@
       
     
     
-    <img src="_static/nitro.png" class="logo__image only-light" alt="Brook - Home"/>
-    <script>document.write(`<img src="_static/nitro.png" class="logo__image only-dark" alt="Brook - Home"/>`);</script>
+    <img src="_static/aljabar linier.png" class="logo__image only-light" alt="Brook - Home"/>
+    <script>document.write(`<img src="_static/aljabar linier.png" class="logo__image only-dark" alt="Brook - Home"/>`);</script>
   
   
 </a></div>
@@ -176,8 +176,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tugas-1.html">Tugas 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="materi-1.html">Eliminasi Gaussian</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial%20Pembuatan%20Web%20Statis.html">Tugas 1</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">MATRIKS</a></li>
 
 
@@ -252,7 +251,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Ftugas-2.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMatriks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -282,7 +281,7 @@
       
       
       
-      <li><a href="_sources/tugas-2.ipynb" target="_blank"
+      <li><a href="_sources/Matriks.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -411,14 +410,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matriks">
 <h1>MATRIKS<a class="headerlink" href="#matriks" title="Link to this heading">#</a></h1>
-<p>Matriks adalah suatu susunan bilangan real atau bilangan kompleks (atau elemen-elemen) yang disusun dalam baris dan kolom sehingga membentuk jajaran persegi panjang.</p>
+<p>Matriks adalah suatu susunan bilangan real atau bilangan kompleks (atau elemen-elemen) yang disusun dalam baris dan kolom sehingga membentuk jajaran persegi panjang.[1]<a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks</a></p>
 <section id="cara-memberi-nama-suatu-matriks">
 <h2>Cara memberi nama suatu matriks<a class="headerlink" href="#cara-memberi-nama-suatu-matriks" title="Link to this heading">#</a></h2>
-<p>Suatu matriks diberi nama dengan menggunakan huruf kapital seperti A, B, C, dan seterusnya, sedangkan anggotanya dinyatakan dengan huruf kecil. Anggota dari suatu matriks dapat pula dinyatakan dengan huruf kecil yang berindeks ganda (), dengan indeks pertama menyatakan di baris mana anggota itu terletak dan indeks kedua menyatakan di kolom mana anggota itu terletak. Sebagai contoh  artinya anggota tersebut terletak pada baris kesatu dan kolom kedua. Begitu juga  artinya anggota tersebut terletak pada baris kedua dan kolom keempat.</p>
+<p>Suatu matriks diberi nama dengan menggunakan huruf kapital seperti A, B, C, dan seterusnya, sedangkan anggotanya dinyatakan dengan huruf kecil. Anggota dari suatu matriks dapat pula dinyatakan dengan huruf kecil yang berindeks ganda (), dengan indeks pertama menyatakan di baris mana anggota itu terletak dan indeks kedua menyatakan di kolom mana anggota itu terletak. Sebagai contoh  artinya anggota tersebut terletak pada baris kesatu dan kolom kedua. Begitu juga  artinya anggota tersebut terletak pada baris kedua dan kolom keempat.[2]<a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks</a></p>
 </section>
 <section id="ordo-ukuran-order-dari-suatu-matriks">
 <h2>Ordo/Ukuran/Order dari suatu matriks<a class="headerlink" href="#ordo-ukuran-order-dari-suatu-matriks" title="Link to this heading">#</a></h2>
-<p>Ordo/ukuran dari suatu matriks ditentukan oleh banyaknya baris dan kolom yang dimiliki oleh matriks tersebut. Contoh: Matriks A pada contoh di atas meniliki dua buah baris dan dua buah kolom, sehingga kita katakana matriks A berordo 2 x 2. Jika sebuah matriks memiliki i baris dan kolom, maka matriks tersebut berordo i x j, dapat dituliskan Ai.j</p>
+<p>Ordo/ukuran dari suatu matriks ditentukan oleh banyaknya baris dan kolom yang dimiliki oleh matriks tersebut. Contoh: Matriks A pada contoh di atas meniliki dua buah baris dan dua buah kolom, sehingga kita katakana matriks A berordo 2 x 2.[3] <a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks</a></p>
+<p>Jika sebuah matriks memiliki i baris dan kolom, maka matriks tersebut berordo i x j, dapat dituliskan Ai.j</p>
+<p>Contoh Matriks</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library numpy</span>
@@ -490,18 +491,18 @@ D
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-[[4 9]
- [9 5]] 
+[[8 1]
+ [0 3]] 
 
 E
-[[4 3]
- [9 2]
- [1 4]] 
+[[5 8]
+ [1 0]
+ [9 4]] 
 
 G
-[[4 6 5]
- [6 6 9]
- [4 4 2]] 
+[[5 4 1]
+ [8 1 6]
+ [9 7 7]] 
 </pre></div>
 </div>
 </div>
@@ -538,7 +539,7 @@ baris dan kolom matriks B
 <section id="penjumlahan">
 <h2>Penjumlahan<a class="headerlink" href="#penjumlahan" title="Link to this heading">#</a></h2>
 <p>Operasi matriks yang pertama kita bahas adalah penjumlahan matriks. Operasi matriks adalah penjumlahan 2 matriks yang letak komponennya sama. Sebenarnya, operasi matriks tidak jauh beda dengan operasi penjumlahan pada umumnya, tapi ada syarat matriks bisa dijumlahkan.</p>
-<p>syarat matriks agar bisa dijumlahkan adalah dua matriks harus memiliki ordo yang sama. Contohnya seperti matriks di bawah ini.</p>
+<p>syarat matriks agar bisa dijumlahkan adalah dua matriks harus memiliki ordo yang sama[4]<a class="reference external" href="https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya">https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya</a>. Contohnya seperti matriks di bawah ini.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
@@ -573,7 +574,7 @@ hasil matriks A+C =
 <section id="pengurangan">
 <h2>Pengurangan<a class="headerlink" href="#pengurangan" title="Link to this heading">#</a></h2>
 <p>Konsep pengurangan pada operasi matriks sama seperti cara pengerjaan penjumlahan, jadi tinggal mengurangkan masing-masing baris sesuai dengan urutannya.
-Syarat pengurangan matriks pun sama dengan penjumlahan, yaitu kedua matriks harus memiliki ordo yang sama sehingga bisa dioperasikan.</p>
+Syarat pengurangan matriks pun sama dengan penjumlahan, yaitu kedua matriks harus memiliki ordo yang sama sehingga bisa dioperasikan.[5]<a class="reference external" href="https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya">https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya</a></p>
 <p>Dibawah ini merupakan contoh operasi pengurangan matriks :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +611,7 @@ hasil matriks A-C =
 <h2>Perkalian<a class="headerlink" href="#perkalian" title="Link to this heading">#</a></h2>
 <section id="operasi-perkalian-matriks-dengan-bilangan-real-skalar">
 <h3>Operasi Perkalian Matriks dengan Bilangan Real (Skalar)<a class="headerlink" href="#operasi-perkalian-matriks-dengan-bilangan-real-skalar" title="Link to this heading">#</a></h3>
-<p>Perkalian matriks dengan bilangan real (skalar) tidak memiliki persyaratan. Jadi, semua matriks dengan ordo apapun bisa dikalikan dengan bilangan real (skalar).</p>
+<p>Perkalian matriks dengan bilangan real (skalar) tidak memiliki persyaratan. Jadi, semua matriks dengan ordo apapun bisa dikalikan dengan bilangan real (skalar).[6]<a class="reference external" href="https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya">https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya</a></p>
 <p>Dibawah ini merupakan contoh operasi perkalian matriks dengan bilangan saklar :</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -656,6 +657,7 @@ hasil perkalian matriks A dengan saklar J
 </ol>
 <p>X (Y + Z) = XY + XZ</p>
 <p>(Y + Z) X = YX + ZX</p>
+<p>[7]<a class="reference external" href="https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya">https://www.pijarbelajar.id/blog/operasi-matriks-penjumlahan-pengurangan-dan-perkalian-beserta-contoh-soalnya</a></p>
 </section>
 </section>
 </section>
@@ -794,12 +796,12 @@ hasil dari perkalian matrix :
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="materi-1.html"
+       href="Tutorial%20Pembuatan%20Web%20Statis.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Eliminasi Gaussian</p>
+        <p class="prev-next-title">Tugas 1</p>
       </div>
     </a>
 </div>
