@@ -5,5 +5,5 @@ format: jb-book
 root: intro
 chapters:
 - file: Tutorial Pembuatan Web Statis
-- file: Sistem Persamaan linier
+- file: Sistem Persamaan Linier
 - file: Matriks
