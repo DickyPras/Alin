@@ -1,10 +1,5 @@
 # SELAMAT DATANG 
-
-Nama = Dicky Prasetyo 
-
-Nim  = 230411100166
-
-Prodi= Teknik Informatika
+Halo nama saya DICKY PRASETYO, Saya seorang mahasiswa dengan NIM 230411100166
 
 ```{tableofcontents}
 ```

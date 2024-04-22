@@ -6,4 +6,6 @@ root: intro
 chapters:
 - file: Tutorial Pembuatan Web Statis
 - file: Sistem Persamaan Linier
+- file: Eliminasi Gauss
 - file: Matriks
+- file: Matriks Invers

@@ -179,8 +179,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Pembuatan Web Statis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Eliminasi Gauss</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
 
+
+<li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html">Matrix Invers</a></li>
 
 </ul>
 
@@ -228,6 +231,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Tutorial Pembuatan Web Statis.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -236,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -253,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FTutorial Pembuatan Web Statis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FTutorial Pembuatan Web Statis.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,6 +412,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">Video Tutorial pembuatan Web Statis dengan template Jupyter-Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lebih-jelasnya-bisa-lihat-video-tutorial-dibawah-ini">Lebih jelasnya bisa lihat video tutorial dibawah ini</a></li>
 </ul>
             </nav>
         </div>
@@ -393,6 +428,25 @@ document.write(`
 <h1>Tutorial Pembuatan Web Statis<a class="headerlink" href="#tutorial-pembuatan-web-statis" title="Link to this heading">#</a></h1>
 <section id="video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">
 <h2>Video Tutorial pembuatan Web Statis dengan template Jupyter-Book<a class="headerlink" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Buat nama repository, lalu pilih public agar nantinya bisa dilihat oleh banyak orang.</p></li>
+<li><p>klik Readme pada Repositories, lalu pilih branch yang akan digunakan seperti “main”</p></li>
+<li><p>Buat File baru bernama “.nojekyll” (gunanya agar membari github agar tidak membangun html)</p></li>
+<li><p>Masuk Ke Codespace</p></li>
+<li><p>Ketik di Terimal “pip install jupyter-book”</p></li>
+<li><p>Buat Folder baru menggunakan command “Jupyter-book Create (nama folder)”</p></li>
+<li><p>Edit bagian yang ingin di edit</p></li>
+<li><p>Build Foldernya menggunakan command “jupyter-book build (nama folder)”</p></li>
+<li><p>pindah Folder HTML nya di luar folder tugas</p></li>
+<li><p>Commit &amp; Sync (jangan lupa diberi pesan pada commitnya)</p></li>
+<li><p>Pindah ke Repository dan ke Setting</p></li>
+<li><p>Pilih Bagian Pages</p></li>
+<li><p>Ganti Branch ke Branch yg kita gunakan tadi</p></li>
+<li><p>Tunggu Proses Deploy nya selesai</p></li>
+</ol>
+</section>
+<section id="lebih-jelasnya-bisa-lihat-video-tutorial-dibawah-ini">
+<h2>Lebih jelasnya bisa lihat video tutorial dibawah ini<a class="headerlink" href="#lebih-jelasnya-bisa-lihat-video-tutorial-dibawah-ini" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://youtu.be/oRqykMAQrQA?si=nPsNdIRbdbI6LGWi">Klik link berikut</a></p>
 </section>
 </section>
@@ -462,6 +516,7 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">Video Tutorial pembuatan Web Statis dengan template Jupyter-Book</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lebih-jelasnya-bisa-lihat-video-tutorial-dibawah-ini">Lebih jelasnya bisa lihat video tutorial dibawah ini</a></li>
 </ul>
   </nav></div>
 

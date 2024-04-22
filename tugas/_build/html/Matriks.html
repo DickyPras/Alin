@@ -60,7 +60,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Sistem Persamaan Linier" href="Sistem%20Persamaan%20Linier.html" />
+    <link rel="next" title="Matrix Invers" href="Matriks%20Invers.html" />
+    <link rel="prev" title="Eliminasi Gauss" href="Eliminasi%20Gauss.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -178,8 +179,11 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tutorial%20Pembuatan%20Web%20Statis.html">Tutorial Pembuatan Web Statis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Eliminasi Gauss</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">MATRIKS</a></li>
 
+
+<li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html">Matrix Invers</a></li>
 
 </ul>
 
@@ -227,6 +231,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Matriks.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -235,7 +270,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FMatriks.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FMatriks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -492,18 +527,18 @@ D
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-[[2 0]
- [7 6]] 
+[[1 2]
+ [4 7]] 
 
 E
-[[6 4]
- [7 9]
- [8 4]] 
+[[4 0]
+ [0 6]
+ [8 8]] 
 
 G
-[[4 3 2]
- [0 5 5]
- [3 2 4]] 
+[[5 4 3]
+ [1 7 0]
+ [7 2 9]] 
 </pre></div>
 </div>
 </div>
@@ -763,6 +798,31 @@ hasil dari perkalian matrix :
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">matriksA</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((([</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">])))</span>
+<span class="n">matrixB</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((([</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])))</span>
+
+<span class="n">dot1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">MatriksA</span><span class="p">,</span><span class="n">MatriksB</span><span class="p">)</span>
+<span class="n">dot2</span> <span class="o">=</span> <span class="n">MatriksA</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">MatriksB</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dot1</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dot2</span><span class="p">,</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 8 34 14]
+ [ 9 40 17]
+ [ 7 28 11]] 
+
+[[ 8 34 14]
+ [ 9 40 17]
+ [ 7 28 11]] 
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -797,13 +857,22 @@ hasil dari perkalian matrix :
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Sistem%20Persamaan%20Linier.html"
+       href="Eliminasi%20Gauss.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Sistem Persamaan Linier</p>
+        <p class="prev-next-title">Eliminasi Gauss</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="Matriks%20Invers.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Matrix Invers</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
