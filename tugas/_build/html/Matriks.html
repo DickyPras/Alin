@@ -57,6 +57,8 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -450,69 +452,95 @@ document.write(`
 <h3>Penjelasan tentang Matriks<a class="headerlink" href="#penjelasan-tentang-matriks" title="Link to this heading">#</a></h3>
 <p>Matriks adalah suatu susunan bilangan real atau bilangan kompleks (atau elemen-elemen) yang disusun dalam baris dan kolom sehingga membentuk jajaran persegi panjang.[1]<a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks</a></p>
 <p>contoh:</p>
-<p>\begin{split}A = \begin{bmatrix}
-3 &amp; 1 &amp; 0 \
-5 &amp; 2 &amp; 1 \
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\begin{split}A = \begin{bmatrix} 
+3 &amp; 1 &amp; 0 \\ 
+5 &amp; 2 &amp; 1 \\ 
 0 &amp; 2 &amp; 3
-\end{bmatrix}\end{split}</p>
-<p>\begin{split}c = \begin{bmatrix}
-1 &amp; 2  \
-3 &amp; 4  \
+\end{bmatrix}\end{split}\end{split}\\\begin{split}\begin{split}c = \begin{bmatrix} 
+1 &amp; 2  \\
+3 &amp; 4  \\
 1 &amp; 0
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\end{aligned}\end{align} \]</div>
 </section>
 <section id="jenis-jenis-matriks">
 <h3>Jenis-jenis Matriks<a class="headerlink" href="#jenis-jenis-matriks" title="Link to this heading">#</a></h3>
 <p>Jenis-jenis matrik yaitu Matrik nol, matrik diagonal, matrik skalar, matrik simetris, matrik identitas, matrik segitiga atas, matrik segitiga bawah, matrik transpose.</p>
 <p>a. Matrik Nol adalah matrik yang semua elemennya penyusunnya nol:</p>
-<p>\begin{split}I = \begin{bmatrix}
-0 &amp; 0 &amp; 0\
-0 &amp; 0 &amp; 0 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}I = \begin{bmatrix}
+0 &amp; 0 &amp; 0\\
+0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>b. Matrik Diagonal adalah suatu matrik yang dimana elemen-elemen diagonalnya mempunyai nilai tidal sama dengan nol dan elemen-elemen selain diagonal bernilai nol:</p>
-<p>\begin{split}A = \begin{bmatrix}
-1 &amp; 0 &amp; 0 \
-0 &amp; 2 &amp; 0 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\
 0 &amp; 0 &amp; 3
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>c. Matrik Skalar adalah matrik yang dimana elemen-elemen diagonalnya bernilai sama dan elemen-elemen selain diagonal bernilai nol:</p>
-<p>\begin{split}A = \begin{bmatrix}
-3 &amp; 0 &amp; 0 \
-0 &amp; 3 &amp; 0 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+3 &amp; 0 &amp; 0 \\
+0 &amp; 3 &amp; 0 \\
 0 &amp; 0 &amp; 3
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>d. Matriks simetris adalah suatu matrik yang jika elemen-elemen matriks A yang terletak pada baris dan kolom yang sama memiliki nilai yang sama dengan elemen-elemen matriks A yang terletak pada baris dan kolom yang berlawanan:</p>
-<p>\begin{split}A = \begin{bmatrix}
-3 &amp; 1 &amp; 2 \
-1 &amp; 4 &amp; 0 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+3 &amp; 1 &amp; 2 \\
+1 &amp; 4 &amp; 0 \\
 2 &amp; 0 &amp; 3
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>e. Matrik Identitas adalah suatu matrik yang elemen-elemen diagonalnya mempunyai nilai 1, sedangkan selain elemen pada diagonal bernilai nol:</p>
-<p>\begin{split}A = \begin{bmatrix}
-1 &amp; 0 &amp; 0 \
-0 &amp; 1 &amp; 0 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 1
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>f. Matrik Segitiga Atas adalah suatu matrik yang elemen-elemennya dibawah diagonal adalah nol:</p>
-<p>\begin{split}A = \begin{bmatrix}
--2 &amp; 6 &amp; 1 \
-0 &amp; 2 &amp; 3 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+-2 &amp; 6 &amp; 1 \\
+0 &amp; 2 &amp; 3 \\
 0 &amp; 0 &amp; -2
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>g. Matrik Segitiga Bawah adalah suatu matrik yang elemen-elemennya diatas diagonal adalah nol:</p>
-<p>\begin{split}A = \begin{bmatrix}
--2 &amp; 0 &amp; 0 \
-3 &amp; -2 &amp; 0
-\end{bmatrix}\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+-2 &amp; 0 &amp; 0 \\
+3 &amp; -2 &amp; 0 
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>h. Matrik Transpose merupakan matrik yang diperoleh dari memindahkan elemen-elemen baris menjadi kolom atau sebaliknya:</p>
 <p>Selelum Transpose:</p>
-<p>\begin{split}A = \begin{bmatrix}
-1 &amp; 2 &amp; 3 \
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix}
+1 &amp; 2 &amp; 3 \\ 
 4 &amp; 5 &amp; 6
-\end{bmatrix}\end{split}</p>
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <p>Transpose:</p>
-<p>\begin{split}A^T = \begin{bmatrix}
+<p>$$
+\begin{split}A^T = \begin{bmatrix}
 1 &amp; 4  \
 2 &amp; 5  \
 3 &amp; 6
@@ -533,10 +561,13 @@ document.write(`
 <h3>Ordo/Ukuran/Order dari suatu matriks<a class="headerlink" href="#ordo-ukuran-order-dari-suatu-matriks" title="Link to this heading">#</a></h3>
 <p>Ordo/ukuran dari suatu matriks ditentukan oleh banyaknya baris dan kolom yang dimiliki oleh matriks tersebut. Contoh: Matriks A pada contoh di atas meniliki dua buah baris dan dua buah kolom, sehingga kita katakana matriks A berordo 2 x 2.[3] <a class="reference external" href="https://fti.ars.ac.id/blog/content/matriks--jenis-jenis-matriks">https://fti.ars.ac.id/blog/content/matriks–jenis-jenis-matriks</a></p>
 <p>Contoh Matriks berordo 2 x 2</p>
-<p>\begin{split}A = \begin{bmatrix}
-1 &amp; 2  \
-3 &amp; 4  \
-\end{bmatrix}\end{split}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{split}A = \begin{bmatrix} 
+1 &amp; 2  \\
+3 &amp; 4  \\
+\end{bmatrix}\end{split}
+\end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import library numpy</span>
@@ -608,18 +639,18 @@ D
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>F
-[[5 8]
- [6 2]] 
+[[9 7]
+ [7 7]] 
 
 E
-[[3 2]
- [8 6]
- [4 8]] 
+[[0 6]
+ [0 6]
+ [1 1]] 
 
 G
-[[9 2 5]
- [2 0 9]
- [0 3 9]] 
+[[8 3 0]
+ [3 5 5]
+ [0 2 7]] 
 </pre></div>
 </div>
 </div>
