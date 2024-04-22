@@ -178,12 +178,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tutorial%20Pembuatan%20Web%20Statis.html">Tutorial Pembuatan Web Statis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gauss.html">Eliminasi Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gaussian.html">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Matrix Invers</a></li>
-
 </ul>
 
     </div>
@@ -410,38 +407,25 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matrix Invers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat matriks invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan">Mencari matriks Invers dengan eliminasi gauss jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gunakan-eliminasi-gauus-jordan">Gunakan eliminasi gauus jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menambahakan-fungsi-rowadd">Menambahakan fungsi RowAdd:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama">Kita kurangkan baris ketiga dengan 5x baris pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua">Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga">Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga">kita kurangkan juga baris pertama dengan 3x baris ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua">langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus">Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-b-1">(b)
-(
-A
-B
-)
-−
-1</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan">Mencari matriks Invers dengan eliminasi gauss jordan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gunakan-eliminasi-gauus-jordan">Gunakan eliminasi gauus jordan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menambahakan-fungsi-rowadd">Menambahakan fungsi RowAdd:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama">Kita kurangkan baris ketiga dengan 5x baris pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua">Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga">Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga">kita kurangkan juga baris pertama dengan 3x baris ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua">langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus">Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selesai">SELESAI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-waktu-kuliah-3variabel">soal Waktu kuliah 3variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-waktu-kuliah-3-variabel">soal Waktu kuliah 3 variabel</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -454,31 +438,19 @@ B
                   
   <section class="tex2jax_ignore mathjax_ignore" id="matrix-invers">
 <h1>Matrix Invers<a class="headerlink" href="#matrix-invers" title="Link to this heading">#</a></h1>
+<section id="definisi">
+<h2>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h2>
 <p>Invers matriks adalah kebalikan (invers) dari sebuah matriks yang apabila matriks tersebut dikalikan dengan inversnya, akan menjadi matriks identitas. Invers matriks dilambangkan dengan A-1. Suatu matriks dikatakan memiliki invers jika determinan dari matriks tersebut tidak sama dengan nol.</p>
 <p>Untuk menentukan invers dari sebuah matriks, terdapat dua aturan berdasarkan ordonya, yaitu ordo 2x2 dan ordo 3x3.[1]<a class="reference external" href="https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal">https://akupintar.id/info-pintar/-/blogs/matriks-pengertian-operasi-determinan-invers-dan-contoh-soal</a></p>
 <section id="sifat-sifat-matriks-invers">
-<h2>Sifat-sifat matriks invers<a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h2>
+<h3>Sifat-sifat matriks invers<a class="headerlink" href="#sifat-sifat-matriks-invers" title="Link to this heading">#</a></h3>
 <p>Jika A dan B adalah matriks-matriks yang dapat dibalik dan yang ukurannya sama, maka</p>
 <p>(a) AB dapat dibalik</p>
+<p>(b) (AB) −1 = B − 1 A − 1</p>
+<p>Sebuah hasilkali matriks yang dapat dibalik selalu dapat dibalik, dan invers hasil kali tersebut adalah hasil kali invers dalam urutan yang dibalik. [1]<a class="reference external" href="https://jagostat.com/aljabar-linear/definisi-dan-sifat-sifat-invers-matriks">https://jagostat.com/aljabar-linear/definisi-dan-sifat-sifat-invers-matriks</a></p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="b-a-b-1">
-<h1>(b)
-(
-A
-B
-)
-−
-1<a class="headerlink" href="#b-a-b-1" title="Link to this heading">#</a></h1>
-<p>B
-−
-1
-A
-−
-1
-Sebuah hasilkali matriks yang dapat dibalik selalu dapat dibalik, dan invers hasil kali tersebut adalah hasil kali invers dalam urutan yang dibalik. [1]<a class="reference external" href="https://jagostat.com/aljabar-linear/definisi-dan-sifat-sifat-invers-matriks">https://jagostat.com/aljabar-linear/definisi-dan-sifat-sifat-invers-matriks</a></p>
 <section id="matriks-invers">
-<h2>Matriks Invers<a class="headerlink" href="#matriks-invers" title="Link to this heading">#</a></h2>
+<h3>Matriks Invers<a class="headerlink" href="#matriks-invers" title="Link to this heading">#</a></h3>
 <p>Invers dari matrix adalah tunggal</p>
 <p>jika B dan C keduanya invers dari matrix A, maka B = C.</p>
 <p>Bukti AB = 1
@@ -488,7 +460,7 @@ IB= C
 B=C</p>
 </section>
 <section id="mencari-matriks-invers-dengan-eliminasi-gauss-jordan">
-<h2>Mencari matriks Invers dengan eliminasi gauss jordan<a class="headerlink" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan" title="Link to this heading">#</a></h2>
+<h3>Mencari matriks Invers dengan eliminasi gauss jordan<a class="headerlink" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan" title="Link to this heading">#</a></h3>
 <p>Metode Gauss-Jordan merupakan salah satu varian dari eliminasi Gaussian yang dilakukan dengan cara operasi reduksi baris untuk mencari invers suatu matriks.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -526,7 +498,7 @@ B=C</p>
 </div>
 </section>
 <section id="gunakan-eliminasi-gauus-jordan">
-<h2>Gunakan eliminasi gauus jordan<a class="headerlink" href="#gunakan-eliminasi-gauus-jordan" title="Link to this heading">#</a></h2>
+<h3>Gunakan eliminasi gauus jordan<a class="headerlink" href="#gunakan-eliminasi-gauus-jordan" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">EG</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
@@ -546,7 +518,7 @@ B=C</p>
 </div>
 </section>
 <section id="menambahakan-fungsi-rowadd">
-<h2>Menambahakan fungsi RowAdd:<a class="headerlink" href="#menambahakan-fungsi-rowadd" title="Link to this heading">#</a></h2>
+<h3>Menambahakan fungsi RowAdd:<a class="headerlink" href="#menambahakan-fungsi-rowadd" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">RowAdd</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">,</span><span class="n">scale</span><span class="p">):</span>
@@ -602,7 +574,7 @@ B=C</p>
 </div>
 </section>
 <section id="kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama">
-<h2>Kita kurangkan baris ketiga dengan 5x baris pertama<a class="headerlink" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama" title="Link to this heading">#</a></h2>
+<h3>Kita kurangkan baris ketiga dengan 5x baris pertama<a class="headerlink" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
@@ -637,7 +609,7 @@ Hasil:
 </div>
 </section>
 <section id="dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua">
-<h2>Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua<a class="headerlink" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua" title="Link to this heading">#</a></h2>
+<h3>Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua<a class="headerlink" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RA2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
@@ -671,7 +643,7 @@ Hasil:
 </div>
 </section>
 <section id="langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga">
-<h2>Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga<a class="headerlink" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga" title="Link to this heading">#</a></h2>
+<h3>Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga<a class="headerlink" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RA3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
@@ -706,7 +678,7 @@ Hasil :
 </div>
 </section>
 <section id="kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga">
-<h2>kita kurangkan juga baris pertama dengan 3x baris ketiga<a class="headerlink" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga" title="Link to this heading">#</a></h2>
+<h3>kita kurangkan juga baris pertama dengan 3x baris ketiga<a class="headerlink" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RA4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
@@ -740,7 +712,7 @@ Hasil :
 </div>
 </section>
 <section id="langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua">
-<h2>langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua<a class="headerlink" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua" title="Link to this heading">#</a></h2>
+<h3>langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua<a class="headerlink" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">RA5</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span>
@@ -777,7 +749,7 @@ Hasil :
 20 &amp; -15 &amp; -4\ -5 &amp; 4 &amp; 1\ \end{bmatrix}</p>
 </section>
 <section id="penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus">
-<h2>Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus" title="Link to this heading">#</a></h2>
+<h3>Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus<a class="headerlink" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus" title="Link to this heading">#</a></h3>
 <p>Buatkan Penyelesaian sistem persamaan dari</p>
 <p>\begin{align*} 4x_1 + 8x_2 + 5x_3 + 4x_4 = 12\</p>
 <p>4x_1 + 5x_2 + 4x_3 + 5x_4 = 15 \</p>
@@ -797,7 +769,7 @@ X = A-1 b \
 x = A- b \
 x = A-1 b \end{align*}</p>
 <section id="jawaban">
-<h3>Jawaban<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h3>
+<h4>Jawaban<a class="headerlink" href="#jawaban" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1419,12 +1391,11 @@ Hasil :
 </div>
 </div>
 </div>
+<p>SELESAI</p>
 </section>
 </section>
-<section id="selesai">
-<h2>SELESAI<a class="headerlink" href="#selesai" title="Link to this heading">#</a></h2>
-<section id="soal-waktu-kuliah-3variabel">
-<h3>soal Waktu kuliah 3variabel<a class="headerlink" href="#soal-waktu-kuliah-3variabel" title="Link to this heading">#</a></h3>
+<section id="soal-waktu-kuliah-3-variabel">
+<h3>soal Waktu kuliah 3 variabel<a class="headerlink" href="#soal-waktu-kuliah-3-variabel" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -1817,38 +1788,25 @@ membiat soal 6 persamaan enam variabel cari solusinya pakai invers matriks</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Matrix Invers</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat matriks invers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-matriks-invers">Sifat-sifat matriks invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan">Mencari matriks Invers dengan eliminasi gauss jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gunakan-eliminasi-gauus-jordan">Gunakan eliminasi gauus jordan</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#menambahakan-fungsi-rowadd">Menambahakan fungsi RowAdd:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama">Kita kurangkan baris ketiga dengan 5x baris pertama</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua">Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga">Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga">kita kurangkan juga baris pertama dengan 3x baris ketiga</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua">langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus">Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#b-a-b-1">(b)
-(
-A
-B
-)
-−
-1</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriks-invers">Matriks Invers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mencari-matriks-invers-dengan-eliminasi-gauss-jordan">Mencari matriks Invers dengan eliminasi gauss jordan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gunakan-eliminasi-gauus-jordan">Gunakan eliminasi gauus jordan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#menambahakan-fungsi-rowadd">Menambahakan fungsi RowAdd:</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-baris-ketiga-dengan-5x-baris-pertama">Kita kurangkan baris ketiga dengan 5x baris pertama</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dari-matriks-diatas-kita-tambahkan-baris-ke-3-dengan-4kali-baris-ke-dua">Dari matriks diatas, kita tambahkan baris ke 3 dengan 4kali baris ke dua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-selanjutnya-kurangkan-baris-kedua-dengan-4x-baris-ketiga">Langkah selanjutnya kurangkan baris kedua dengan 4x baris ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#kita-kurangkan-juga-baris-pertama-dengan-3x-baris-ketiga">kita kurangkan juga baris pertama dengan 3x baris ketiga</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#langkah-terakhir-kita-kurangkan-baris-pertama-dengan-2x-baris-kedua">langkah terakhir kita kurangkan baris pertama dengan 2x baris kedua</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penyelesaian-sistem-persamaan-linier-menggunakan-matriks-invers-membuat-soal-4-persamaan-4-variabel-cari-solusinya-dengan-eliminasi-gaus">Penyelesaian sistem persamaan linier menggunakan matriks invers membuat soal 4 persamaan 4 variabel cari solusinya dengan eliminasi gaus</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#jawaban">Jawaban</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#selesai">SELESAI</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-waktu-kuliah-3variabel">soal Waktu kuliah 3variabel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#soal-waktu-kuliah-3-variabel">soal Waktu kuliah 3 variabel</a></li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>

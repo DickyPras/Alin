@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eliminasi Gauss &#8212; Hold</title>
+    <title>Eliminasi Gaussian &#8212; Hold</title>
   
   
   
@@ -57,7 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Eliminasi Gauss';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Eliminasi Gaussian';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="MATRIKS" href="Matriks.html" />
@@ -179,12 +179,9 @@
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Tutorial%20Pembuatan%20Web%20Statis.html">Tutorial Pembuatan Web Statis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eliminasi Gauss</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
-
-
 <li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html">Matrix Invers</a></li>
-
 </ul>
 
     </div>
@@ -239,7 +236,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Eliminasi Gauss.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Eliminasi Gaussian.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -287,7 +284,7 @@
       
       
       
-      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FEliminasi Gauss.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FEliminasi Gaussian.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -317,7 +314,7 @@
       
       
       
-      <li><a href="_sources/Eliminasi Gauss.ipynb" target="_blank"
+      <li><a href="_sources/Eliminasi Gaussian.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -401,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eliminasi Gauss</h1>
+    <h1>Eliminasi Gaussian</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -411,9 +408,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penggunaa-eliminasi-gauss">Penggunaa Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rowswap">RowSwap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rowadd">RowAdd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penggunaa-eliminasi-gauss">Penggunaa Eliminasi Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rowswap">RowSwap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rowadd">RowAdd</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -425,15 +425,18 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gauss">
-<h1>Eliminasi Gauss<a class="headerlink" href="#eliminasi-gauss" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="eliminasi-gaussian">
+<h1>Eliminasi Gaussian<a class="headerlink" href="#eliminasi-gaussian" title="Link to this heading">#</a></h1>
+<section id="definisi">
+<h2>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h2>
 <p>Eliminasi gauss adalah metode untuk operasi nilai-nilai dalam matriks, untuk membuat matriks lebih sederhana lagi. Metode eliminasi gaus dikembangkan dari metode eliminasi, dengan cara menghilangkan atau mengurangi jumlah variabel, untuk mendapatkan nilai variabel bebas.</p>
+<p>Ada tiga jenis operasi</p>
 <section id="penggunaa-eliminasi-gauss">
-<h2>Penggunaa Eliminasi Gauss<a class="headerlink" href="#penggunaa-eliminasi-gauss" title="Link to this heading">#</a></h2>
+<h3>Penggunaa Eliminasi Gauss<a class="headerlink" href="#penggunaa-eliminasi-gauss" title="Link to this heading">#</a></h3>
 <p>Penggunaan Eliminasi Gauss yaitu mengubah persamaan linear menjadi bentuk matriks, kemudian diubah ke bentuk Eselon Baris melalui Operasi Baris Elementer. Setelah itu bentuk matriks diselesaikan dengan substitusi balik. Eliminasi Gauss ini berasal dari operasi matematika pada baris matriks yang dilanjutkan sampai tersisa satu variabel.</p>
 </section>
 <section id="rowswap">
-<h2>RowSwap<a class="headerlink" href="#rowswap" title="Link to this heading">#</a></h2>
+<h3>RowSwap<a class="headerlink" href="#rowswap" title="Link to this heading">#</a></h3>
 <p>RowSwap adalah operasi dasar pada matriks yang melibatkan pertukaran dua baris. Dalam operasi ini, dua baris pada matriks ditukar posisinya. Operasi row swap sering digunakan dalam proses Eliminasi Gauss</p>
 <p>Contoh jika memiliki soal Matrix berikut</p>
 <div class="cell docutils container">
@@ -521,7 +524,7 @@ Matriks setelah RowSwap:
 </div>
 </section>
 <section id="rowadd">
-<h2>RowAdd<a class="headerlink" href="#rowadd" title="Link to this heading">#</a></h2>
+<h3>RowAdd<a class="headerlink" href="#rowadd" title="Link to this heading">#</a></h3>
 <p>RowAdd adalah operasi dasar pada matriks yang melibatkan penambahan hasil perkalian satu baris dengan suatu skalar (bilangan konstan) terhadap baris lainnya. Dalam operasi ini, setiap elemen pada suatu baris akan ditambahkan dengan hasil perkalian skalar tersebut terhadap elemen pada baris lain.</p>
 <p>Misalnya, jika kita memiliki matriks berikut:</p>
 <div class="cell docutils container">
@@ -601,6 +604,7 @@ Matriks setelah RowAdd:
 <p>x_3 = 2 \end{align*}</p>
 </section>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -666,9 +670,12 @@ Matriks setelah RowAdd:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#penggunaa-eliminasi-gauss">Penggunaa Eliminasi Gauss</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rowswap">RowSwap</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#rowadd">RowAdd</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#penggunaa-eliminasi-gauss">Penggunaa Eliminasi Gauss</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rowswap">RowSwap</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rowadd">RowAdd</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
