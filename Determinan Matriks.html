@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Tutorial Pembuatan Web Statis &#8212; Hold</title>
+    <title>Determinan Matriks &#8212; Hold</title>
   
   
   
@@ -57,11 +57,12 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Tutorial Pembuatan Web Statis';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Determinan Matriks';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Sistem Persamaan Linier" href="Sistem%20Persamaan%20Linier.html" />
-    <link rel="prev" title="SELAMAT DATANG" href="intro.html" />
+    <link rel="prev" title="Matrix Invers" href="Matriks%20Invers.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -177,12 +178,12 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Tutorial Pembuatan Web Statis</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tutorial%20Pembuatan%20Web%20Statis.html">Tutorial Pembuatan Web Statis</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Sistem%20Persamaan%20Linier.html">Sistem Persamaan Linier</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Eliminasi%20Gaussian.html">Eliminasi Gaussian</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html">Matrix Invers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Determinan%20Matriks.html">Determinan Matriks</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Determinan Matriks</a></li>
 </ul>
 
     </div>
@@ -237,7 +238,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Tutorial Pembuatan Web Statis.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Determinan Matriks.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -285,7 +286,7 @@
       
       
       
-      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FTutorial Pembuatan Web Statis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FDeterminan Matriks.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -315,7 +316,7 @@
       
       
       
-      <li><a href="_sources/Tutorial Pembuatan Web Statis.ipynb" target="_blank"
+      <li><a href="_sources/Determinan Matriks.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -399,7 +400,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Tutorial Pembuatan Web Statis</h1>
+    <h1>Determinan Matriks</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -409,8 +410,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">Video Tutorial pembuatan Web Statis dengan template Jupyter-Book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-update-repository">Cara update repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor">EKspansi Konfaktor</a></li>
 </ul>
             </nav>
         </div>
@@ -422,42 +424,220 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="tutorial-pembuatan-web-statis">
-<h1>Tutorial Pembuatan Web Statis<a class="headerlink" href="#tutorial-pembuatan-web-statis" title="Link to this heading">#</a></h1>
-<section id="video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">
-<h2>Video Tutorial pembuatan Web Statis dengan template Jupyter-Book<a class="headerlink" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Buat nama repository, lalu pilih public agar nantinya bisa dilihat oleh banyak orang.</p></li>
-<li><p>klik Readme pada Repositories, lalu pilih branch yang akan digunakan seperti “main”</p></li>
-<li><p>Buat File baru bernama “.nojekyll” (gunanya agar membari github agar tidak membangun html)</p></li>
-<li><p>Masuk Ke Codespace</p></li>
-<li><p>Ketik di Terimal “pip install jupyter-book”</p></li>
-<li><p>Buat Folder baru menggunakan command “Jupyter-book Create (nama folder)”</p></li>
-<li><p>Edit bagian yang ingin di edit</p></li>
-<li><p>Build Foldernya menggunakan command “jupyter-book build (nama folder)”</p></li>
-<li><p>pindah Folder HTML nya di luar folder tugas</p></li>
-<li><p>Commit &amp; Sync (jangan lupa diberi pesan pada commitnya)</p></li>
-<li><p>Pindah ke Repository dan ke Setting</p></li>
-<li><p>Pilih Bagian Pages</p></li>
-<li><p>Ganti Branch ke Branch yg kita gunakan tadi</p></li>
-<li><p>Tunggu Proses Deploy nya selesai</p></li>
-</ol>
-<p>Lebih jelasnya bisa lihat video tutorial dibawah ini</p>
-<p><a class="reference external" href="https://youtu.be/oRqykMAQrQA?si=nPsNdIRbdbI6LGWi">Klik link berikut</a></p>
+  <section class="tex2jax_ignore mathjax_ignore" id="determinan-matriks">
+<h1>Determinan Matriks<a class="headerlink" href="#determinan-matriks" title="Link to this heading">#</a></h1>
+<section id="definisi">
+<h2>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h2>
+<p>Determinan matriks adalah suatu fungsi tertentu yang menghubungkan suatu bilangan riil
+dengan suatu matriks bujur sangkar. Determinan suatu matriks dapat dinotasikan dengan det(A) atau |A|.</p>
+<p>Setiap matriks persegi ataupun bujur sangkar mempunyai nilai determinan. Nilai
+determinan dari suatu matriks itu adalah skalar. Jika nilai determinan suatu matriks
+sama dengan nol maka matriks tersebut disebut matriks singular.</p>
 </section>
-<section id="cara-update-repository">
-<h2>Cara update repository<a class="headerlink" href="#cara-update-repository" title="Link to this heading">#</a></h2>
+<section id="sifat-sifat-determinan">
+<h2>Sifat-sifat determinan<a class="headerlink" href="#sifat-sifat-determinan" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p>buka codespace</p></li>
-<li><p>Ubah dulu apa yang mau diubah</p></li>
-<li><p>Hapus source build htmlnya (untuk mempermudah ketik di command jb clean kemudian diikuti nama foldernya.  contoh “jb clean tugas”)</p></li>
-<li><p>Hapus file update yang lama dibagian diluar, sisakan file README, nojekyle, dan folder “tugas”</p></li>
-<li><p>Kemudian build ulang dengan mengetik (jb build diikuti nama folder, contoh “jb build tugas”)</p></li>
-<li><p>Copy file html di build lalu paste di diluar folder</p></li>
-<li><p>Lalu commite jangan lupa beri pesan</p></li>
-<li><p>lalu tekan sycn change</p></li>
-<li><p>Tunggu perubahannya di menu repository lalu akan terupdate</p></li>
+<li><p>determinan matriks identitas adalah 1</p></li>
 </ol>
+<p>Conoth 4 Matriks</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}
+3 &amp; 3 \\
+5 &amp; 2 \\
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B = \begin{bmatrix}
+2 &amp; 3 &amp; 3 \\
+4 &amp; 5 &amp; 1 \\
+6 &amp; 3 &amp; 3\\
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C = \begin{bmatrix}
+1 &amp; 0 \\
+0 &amp; 1 \\
+\end{bmatrix}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+D = \begin{bmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>kita buktikan dari matrik C dam D</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;determinan dari matriks identitas c adalah : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;determinan dari matriks identitas d adalah : </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">d</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[3 3]
+ [5 2]]
+
+[[2 3 3]
+ [4 5 1]
+ [6 3 3]]
+
+[[1 0]
+ [0 1]]
+
+[[1 0 0]
+ [0 1 0]
+ [0 0 1]]
+
+determinan dari matriks identitas c adalah : 1.0
+determinan dari matriks identitas d adalah : 1.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="math notranslate nohighlight">
+\[2. det(c) = det(axb)
+= det(a) x det(b)
+=A x A^I
+\]</div>
+<p>dan
+$$</p>
+<p>I = A x A^I</p>
+<p>detI =det(A) x det(A^I)</p>
+<p>det A^I = 1/detA
+$$</p>
+<p>kita buktikan</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
+<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">detA</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="n">detB</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">det</span><span class="p">(</span><span class="n">B</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;determinan A : </span><span class="si">{</span><span class="n">detA</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;determinan A invers : </span><span class="si">{</span><span class="n">detB</span><span class="o">.</span><span class="n">round</span><span class="p">()</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">C</span> <span class="o">=</span> <span class="n">detA</span> <span class="o">*</span> <span class="n">detB</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;det.A x det.B :&quot;</span><span class="p">,</span><span class="nb">round</span><span class="p">(</span><span class="n">C</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="nd">@B</span><span class="o">.</span><span class="n">round</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>determinan A : -9.0
+determinan A invers : -0.0
+det.A x det.B : 1
+[[3. 0.]
+ [2. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="ekspansi-konfaktor">
+<h2>EKspansi Konfaktor<a class="headerlink" href="#ekspansi-konfaktor" title="Link to this heading">#</a></h2>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{bmatrix}
+3 &amp; 5 &amp; -2 &amp; 6 \\
+1 &amp; 2 &amp; -1 &amp; 1 \\
+2 &amp; 4 &amp; 1 &amp; 5 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Penyelesaian:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix}
+3 &amp; 5 &amp; -2 &amp; 6 \\
+1 &amp; 2 &amp; -1 &amp; 1 \\
+2 &amp; 4 &amp; 1 &amp; 5 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix}
+\end{split}\]</div>
+<p>baris pertama ditukar dengan baris kedua
+$<span class="math notranslate nohighlight">\(
+= \begin{bmatrix}
+1 &amp; 2 &amp; -1 &amp; 1 \\
+3 &amp; 5 &amp; -2 &amp; 6 \\
+2 &amp; 4 &amp; 1 &amp; 5 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix}
+\)</span>$</p>
+<p>-3 kali baris pertama ditambahakan ke baris kedua</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix}
+1 &amp; 2 &amp; -1 &amp; 1 \\
+0 &amp; -1 &amp; 1 &amp; 3 \\
+2 &amp; 4 &amp; 1 &amp; 5 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix}
+\end{split}\]</div>
+<p>-2 kali baris pertama ditambhakan ke baris ketiga</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix}
+1 &amp; 2 &amp; -1 &amp; 1 \\
+0 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 3 &amp; 3 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix}
+\end{split}\]</div>
+<p>-3 kali baris pertama ditambahkan ke baris
+keempat</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix}
+1 &amp; 2 &amp; -1 &amp; 1 \\
+0 &amp; -1 &amp; 1 &amp; 3 \\
+0 &amp; 0 &amp; 3 &amp; 3 \\
+0 &amp; 1 &amp; 8 &amp; 0\\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Ekspansi kolom pertama</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= -(-1)^{1+1} (-1) = \begin{bmatrix}
+-1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 3 \\
+1 &amp; 8 &amp; 0 \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Baris pertama ditambahkan ke baris ketiga</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix}
+-1 &amp; 1 &amp; 3 \\
+0 &amp; 3 &amp; 3 \\
+1 &amp; 9 &amp; 3 \\
+\end{bmatrix}
+\end{split}\]</div>
+<p>Ekspansi kofaktor kolom pertama
+$<span class="math notranslate nohighlight">\(
+= -(-1)^{1+1} (-1) = \begin{bmatrix}
+3 &amp; 3 \\
+9 &amp; 3 \\
+\end{bmatrix}
+\)</span>$</p>
+<p>=9 - 27</p>
+<p>= -18</p>
 </section>
 </section>
 
@@ -492,22 +672,13 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="intro.html"
+       href="Matriks%20Invers.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">SELAMAT DATANG</p>
+        <p class="prev-next-title">Matrix Invers</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Sistem%20Persamaan%20Linier.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Sistem Persamaan Linier</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -525,8 +696,9 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#video-tutorial-pembuatan-web-statis-dengan-template-jupyter-book">Video Tutorial pembuatan Web Statis dengan template Jupyter-Book</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-update-repository">Cara update repository</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat determinan</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor">EKspansi Konfaktor</a></li>
 </ul>
   </nav></div>
 
