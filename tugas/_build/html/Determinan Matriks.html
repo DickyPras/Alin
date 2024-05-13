@@ -412,7 +412,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat determinan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor">EKspansi Konfaktor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor-determianan-dari-matriks-4-x-4">EKspansi Konfaktor Determianan dari matriks 4 x 4</a></li>
 </ul>
             </nav>
         </div>
@@ -428,8 +428,7 @@ document.write(`
 <h1>Determinan Matriks<a class="headerlink" href="#determinan-matriks" title="Link to this heading">#</a></h1>
 <section id="definisi">
 <h2>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h2>
-<p>Determinan matriks adalah suatu fungsi tertentu yang menghubungkan suatu bilangan riil
-dengan suatu matriks bujur sangkar. Determinan suatu matriks dapat dinotasikan dengan det(A) atau |A|.</p>
+<p>Determinan matriks adalah selisih antara perkalian elemen-elemen pada diagonal utama dengan perkalian elemen-elemen pada diagonal sekunder. Determinan suatu matriks dapat dinotasikan dengan det(A) atau |A|.</p>
 <p>Setiap matriks persegi ataupun bujur sangkar mempunyai nilai determinan. Nilai
 determinan dari suatu matriks itu adalah skalar. Jika nilai determinan suatu matriks
 sama dengan nol maka matriks tersebut disebut matriks singular.</p>
@@ -550,8 +549,8 @@ det.A x det.B : 1
 </div>
 </div>
 </section>
-<section id="ekspansi-konfaktor">
-<h2>EKspansi Konfaktor<a class="headerlink" href="#ekspansi-konfaktor" title="Link to this heading">#</a></h2>
+<section id="ekspansi-konfaktor-determianan-dari-matriks-4-x-4">
+<h2>EKspansi Konfaktor Determianan dari matriks 4 x 4<a class="headerlink" href="#ekspansi-konfaktor-determianan-dari-matriks-4-x-4" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 A = \begin{bmatrix}
@@ -562,82 +561,211 @@ A = \begin{bmatrix}
 \end{bmatrix}
 \end{split}\]</div>
 <p>Penyelesaian:</p>
+<p>baris pertama akan kita jadikan koefisien, ketika kita membentuk matriks 3/3</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-= \begin{bmatrix}
-3 &amp; 5 &amp; -2 &amp; 6 \\
+= \begin{bmatrix} 
+3 &amp; 5 &amp; -2 &amp; 6 \\      
 1 &amp; 2 &amp; -1 &amp; 1 \\
 2 &amp; 4 &amp; 1 &amp; 5 \\
 3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix} = + 3 
+\begin{bmatrix}
+2 &amp; -1 &amp; 1\\
+4 &amp; 1 &amp; 5\\
+7 &amp; 5 &amp; 3\\
+\end{bmatrix}  = - 5
+\begin{bmatrix}
+1 &amp; -1 &amp; 1\\
+2 &amp; 1 &amp; 3\\
+3 &amp; 5 &amp; 3\\
+\end{bmatrix} = + (-2)
+\begin{bmatrix} 
+1 &amp; 2 &amp; 1\\
+2 &amp; 4 &amp; 3\\
+3 &amp; 7 &amp; 3\\
+\end{bmatrix} = - 6
+\begin{bmatrix}
+1 &amp; 2 &amp; -1\\
+2 &amp; 4 &amp; 1 \\
+3 &amp; 7 &amp; 5 \\
 \end{bmatrix}
 \end{split}\]</div>
-<p>baris pertama ditukar dengan baris kedua
+<p>baris pertama akan kita jadikan koefisien, ketika kita membentuk matriks 2/2</p>
+<p>baris 1 kolom 1:
 $<span class="math notranslate nohighlight">\(
-= \begin{bmatrix}
-1 &amp; 2 &amp; -1 &amp; 1 \\
-3 &amp; 5 &amp; -2 &amp; 6 \\
-2 &amp; 4 &amp; 1 &amp; 5 \\
-3 &amp; 7 &amp; 5 &amp; 3\\
+\begin{bmatrix}
+2 &amp; -1 &amp; 1\\
+4 &amp; 1 &amp; 5\\
+7 &amp; 5 &amp; 3\\
+\end{bmatrix} = 2
+\begin{bmatrix}
+1 &amp; 5\\ 
+5 &amp; 3\\
+\end{bmatrix} = - (-1)
+\begin{bmatrix}
+4 &amp; 5\\
+7 &amp; 3\\
+\end{bmatrix} = + 1
+\begin{bmatrix}
+4 &amp; 1\\
+7 &amp; 5\\
 \end{bmatrix}
 \)</span>$</p>
-<p>-3 kali baris pertama ditambahakan ke baris kedua</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-= \begin{bmatrix}
-1 &amp; 2 &amp; -1 &amp; 1 \\
-0 &amp; -1 &amp; 1 &amp; 3 \\
-2 &amp; 4 &amp; 1 &amp; 5 \\
-3 &amp; 7 &amp; 5 &amp; 3\\
-\end{bmatrix}
+= 2(3 - 25) -(-1)(12 - 35) + 1(20 - 7)\\
+= 2(-22) + 1(-23) + 1(13)\\
+= -44 + 23 + 13\\
+= -8
 \end{split}\]</div>
-<p>-2 kali baris pertama ditambhakan ke baris ketiga</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-= \begin{bmatrix}
-1 &amp; 2 &amp; -1 &amp; 1 \\
-0 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 0 &amp; 3 &amp; 3 \\
-3 &amp; 7 &amp; 5 &amp; 3\\
-\end{bmatrix}
-\end{split}\]</div>
-<p>-3 kali baris pertama ditambahkan ke baris
-keempat</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-= \begin{bmatrix}
-1 &amp; 2 &amp; -1 &amp; 1 \\
-0 &amp; -1 &amp; 1 &amp; 3 \\
-0 &amp; 0 &amp; 3 &amp; 3 \\
-0 &amp; 1 &amp; 8 &amp; 0\\
-\end{bmatrix}
-\end{split}\]</div>
-<p>Ekspansi kolom pertama</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-= -(-1)^{1+1} (-1) = \begin{bmatrix}
--1 &amp; 1 &amp; 3 \\
-0 &amp; 3 &amp; 3 \\
-1 &amp; 8 &amp; 0 \\
-\end{bmatrix}
-\end{split}\]</div>
-<p>Baris pertama ditambahkan ke baris ketiga</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-= \begin{bmatrix}
--1 &amp; 1 &amp; 3 \\
-0 &amp; 3 &amp; 3 \\
-1 &amp; 9 &amp; 3 \\
-\end{bmatrix}
-\end{split}\]</div>
-<p>Ekspansi kofaktor kolom pertama
+<p>baris 1 kolom 2:
 $<span class="math notranslate nohighlight">\(
-= -(-1)^{1+1} (-1) = \begin{bmatrix}
-3 &amp; 3 \\
-9 &amp; 3 \\
+\begin{bmatrix}
+1 &amp; -1 &amp; 1\\
+2 &amp; 1 &amp; 3\\
+3 &amp; 5 &amp; 3\\
+\end{bmatrix} = 1
+\begin{bmatrix}
+1 &amp; 3\\
+5 &amp; 3\\
+\end{bmatrix} = -(-1)
+\begin{bmatrix}
+2 &amp; 3\\
+3 &amp; 3\\
+\end{bmatrix} = + 1
+\begin{bmatrix}
+2 &amp; 1\\
+3 &amp; 5\\
 \end{bmatrix}
 \)</span>$</p>
-<p>=9 - 27</p>
-<p>= -18</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= 1(3 - 15) - (-1)(6 - 9) + 1(10 - 3)\\
+= 1(-12) - 1(-3) + 1(7)\\
+= -12 + 3 + 7\\
+= -2
+\end{split}\]</div>
+<p>baris 1 kolom 3:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix} 
+1 &amp; 2 &amp; 1\\
+2 &amp; 4 &amp; 3\\
+3 &amp; 7 &amp; 3\\
+\end{bmatrix} = 1
+\begin{bmatrix}
+4 &amp; 3\\
+7 &amp; 3\\
+\end{bmatrix} = -2 
+\begin{bmatrix}
+2 &amp; 3\\
+3 &amp; 3\\
+\end{bmatrix} = + 1
+\begin{bmatrix}
+2 &amp; 4\\
+3 &amp; 7\\
+\end{bmatrix}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= 1(12 - 21) - (-2)(6 - 9) + 1(14 - 12)\\
+= 1(9) + 2(-3) + 1(2)\\
+= 9 + (-6) + 2\\
+= 5
+\end{split}\]</div>
+<p>baris 1 kolom 4:
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix}
+1 &amp; 2 &amp; -1\\
+2 &amp; 4 &amp; 1 \\
+3 &amp; 7 &amp; 5 \\
+\end{bmatrix} = 1
+\begin{bmatrix}
+4 &amp; 1\\
+7 &amp; 5\\
+\end{bmatrix} = -2
+\begin{bmatrix}
+2 &amp; 1\\
+3 &amp; 5\\ 
+\end{bmatrix} = +(-1)
+\begin{bmatrix}
+2 &amp; 4\\
+3 &amp; 7\\
+\end{bmatrix}
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= 1(20 - 7) -2(10 - 3) +(-1)(14 - 12)\\
+= 1(3) -2(7) +(-1)(2)\\
+= 3 - 14 - 2\\
+= -13
+\end{split}\]</div>
+<p>Hasilnya:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \begin{bmatrix} 
+3 &amp; 5 &amp; -2 &amp; 6 \\      
+1 &amp; 2 &amp; -1 &amp; 1 \\
+2 &amp; 4 &amp; 1 &amp; 5 \\
+3 &amp; 7 &amp; 5 &amp; 3\\
+\end{bmatrix} 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+2 &amp; -1 &amp; 1\\
+4 &amp; 1 &amp; 5\\
+7 &amp; 5 &amp; 3\\
+\end{bmatrix}  = + 3\\ 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+3(-8)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; -1 &amp; 1\\
+2 &amp; 1 &amp; 3\\
+3 &amp; 5 &amp; 3\\
+\end{bmatrix} = - 5\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+-5(-2)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix} 
+1 &amp; 2 &amp; 1\\
+2 &amp; 4 &amp; 3\\
+3 &amp; 7 &amp; 3\\
+\end{bmatrix} = + (-2)\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
++(-2)(5)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{bmatrix}
+1 &amp; 2 &amp; -1\\
+2 &amp; 4 &amp; 1 \\
+3 &amp; 7 &amp; 5 \\
+\end{bmatrix} = - 6\\ 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+-6(-13)
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= 3(-8) - 5(-2) + (-2)(5) - 6(-13)\\
+= -24 + 10 + (-10) - (-78)\\
+= 54
+\end{split}\]</div>
+<p>Link referensi belajar det matriks 4x4:</p>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=fWzUwrt1Z0s">https://www.youtube.com/watch?v=fWzUwrt1Z0s</a></p>
 </section>
 </section>
 
@@ -698,7 +826,7 @@ $<span class="math notranslate nohighlight">\(
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sifat-sifat-determinan">Sifat-sifat determinan</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor">EKspansi Konfaktor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ekspansi-konfaktor-determianan-dari-matriks-4-x-4">EKspansi Konfaktor Determianan dari matriks 4 x 4</a></li>
 </ul>
   </nav></div>
 
