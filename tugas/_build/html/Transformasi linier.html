@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Eigen Value dan Eigen Vektor &#8212; Hold</title>
+    <title>Transformasi Linier &#8212; Hold</title>
   
   
   
@@ -59,11 +59,10 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Eigen Value dan Vektor';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Transformasi linier';</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Transformasi Linier" href="Transformasi%20linier.html" />
-    <link rel="prev" title="Determinan Matriks" href="Determinan%20Matriks.html" />
+    <link rel="prev" title="Eigen Value dan Eigen Vektor" href="Eigen%20Value%20dan%20Vektor.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,8 +184,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Matriks.html">MATRIKS</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Matriks%20Invers.html">Matrix Invers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Determinan%20Matriks.html">Determinan Matriks</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Eigen Value dan Eigen Vektor</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Transformasi%20linier.html">Transformasi Linier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Eigen%20Value%20dan%20Vektor.html">Eigen Value dan Eigen Vektor</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Transformasi Linier</a></li>
 </ul>
 
     </div>
@@ -241,7 +240,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Eigen Value dan Vektor.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/DickyPras/Alin/blob/main/tugas/Transformasi linier.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -289,7 +288,7 @@
       
       
       
-      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FEigen Value dan Vektor.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/DickyPras/Alin/issues/new?title=Issue%20on%20page%20%2FTransformasi linier.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -319,7 +318,7 @@
       
       
       
-      <li><a href="_sources/Eigen Value dan Vektor.ipynb" target="_blank"
+      <li><a href="_sources/Transformasi linier.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -403,7 +402,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Eigen Value dan Eigen Vektor</h1>
+    <h1>Transformasi Linier</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -413,10 +412,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-hitung-eigenvalue-dan-eigenvektor">Contoh hitung EigenValue dan EigenVektor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-2-x-2">Matrik 2 x 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menemukan-eiganvektor">cara menemukan EiganVektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">konsep</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linier-dalam-bentuk-matrik">Transformasi linier Dalam bentuk matrik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-transformasi-linier">Refleksi Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Konsep</a></li>
 </ul>
 </li>
 </ul>
@@ -430,213 +432,250 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="eigen-value-dan-eigen-vektor">
-<h1>Eigen Value dan Eigen Vektor<a class="headerlink" href="#eigen-value-dan-eigen-vektor" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="transformasi-linier">
+<h1>Transformasi Linier<a class="headerlink" href="#transformasi-linier" title="Link to this heading">#</a></h1>
 <section id="konsep">
-<h2>Konsep<a class="headerlink" href="#konsep" title="Link to this heading">#</a></h2>
-<p>Eigenvalues (nilai eigen) dan eigenvectors (vektor eigen) adalah konsep yang penting dalam teori matriks dan aljabar linier. Mereka terkait dengan transformasi linear dan matriks, dan memberikan informasi penting tentang sifat-sifat dasar dari matriks.</p>
-<p>Eigenvalues bisa berupa bilangan real atau kompleks tergantung pada sifat matriks. Jika sebuah matriks memiliki bilangan kompleks sebagai eigenvalues, maka akan ada pasangan eigenvectors kompleks konjugat yang sesuai.</p>
-</section>
-<section id="contoh-hitung-eigenvalue-dan-eigenvektor">
-<h2>Contoh hitung EigenValue dan EigenVektor<a class="headerlink" href="#contoh-hitung-eigenvalue-dan-eigenvektor" title="Link to this heading">#</a></h2>
-<section id="matrik-2-x-2">
-<h3>Matrik 2 x 2<a class="headerlink" href="#matrik-2-x-2" title="Link to this heading">#</a></h3>
-<div class="math notranslate nohighlight">
-\[
-A\=(42​13​)
-\]</div>
-<p>Untuk menemukan eigenvalue, kita cari λ yang memenuhi:</p>
-<div class="math notranslate nohighlight">
-\[
-det(4−λ2 ​13−λ​)\ =0
-\]</div>
-<p>Menghitung determinan, kita dapatkan:</p>
-<div class="math notranslate nohighlight">
-\[
-(4−λ)(3−λ)−2⋅1\=λ2−7λ+10\ =0
-\]</div>
-<p>Dengan menyelesaikan persamaan kuadrat ini, kita dapatkan dua eigenvalue:</p>
-<div class="math notranslate nohighlight">
-\[
-λ1​\=5, λ2​\ =2
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Definisikan matriks A</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-
-<span class="c1"># Hitung eigenvalue dan eigenvektor</span>
-<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvalue</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvektor</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvektor:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalue:
-[5. 2.]
-Eigenvektor:
-[[ 0.70710678 -0.4472136 ]
- [ 0.70710678  0.89442719]]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Definisikan matriks A (3x3)</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-
-<span class="c1"># Hitung eigenvalue dan eigenvektor</span>
-<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvalue</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvektor</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvektor:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalue:
-[5.86619826 1.34455762 2.78924412]
-Eigenvektor:
-[[ 0.76515114  0.41033692  0.4235206 ]
- [ 0.21209739  0.47151899 -0.88641397]
- [ 0.60791317 -0.78057252  0.18681696]]
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="cara-menemukan-eiganvektor">
-<h3>cara menemukan EiganVektor<a class="headerlink" href="#cara-menemukan-eiganvektor" title="Link to this heading">#</a></h3>
-<p>Untuk menemukan eigenvektor, kita harus terlebih dahulu menemukan eigenvalue dari matriks
-𝐴. Setelah eigenvalue ditemukan, eigenvektor dapat ditentukan dengan menyelesaikan sistem persamaan linear berikut:</p>
-<div class="math notranslate nohighlight">
-\[
-(A−λI)v\=0
-\]</div>
-<p>Di mana
-𝐼
-I adalah matriks identitas. Sistem persamaan ini dapat diselesaikan untuk menemukan vektor 𝑣.</p>
-<p>Contoh :
-Seperti yang kita temukan sebelumnya, eigenvalue
-λ dari
-A adalah 5 dan 2. Untuk mencari eigenvektor yang sesuai dengan masing-masing eigenvalue, kita substitusikan
-λ ke dalam persamaan $<span class="math notranslate nohighlight">\( (A−λI)v\=0. \)</span>$</p>
-<p>Untuk <span class="math notranslate nohighlight">\( λ\=5: \)</span></p>
-<div class="math notranslate nohighlight">
-\[
-(A−5I)v\=(4−52​13−5​)(v1​v2​​)\=(−12​1−2​)(v1​v2​​)\=(00​)
-\]</div>
-<p>Persamaan ini menghasilkan sistem linear:</p>
-<div class="math notranslate nohighlight">
-\[
-−v1​+v2​\=02v1​−2v2​\=0​
-\]</div>
-<p>Yang berarti v1 = v2. Jadi Eigenvektor yang sesuai <span class="math notranslate nohighlight">\( λ\=5 \)</span> adalah</p>
-<div class="math notranslate nohighlight">
-\[
-v1​\=k(11​)untuk sembarang k\=0
-\]</div>
-<p>Untuk <span class="math notranslate nohighlight">\(λ\=2\)</span>
+<h2>konsep<a class="headerlink" href="#konsep" title="Link to this heading">#</a></h2>
+<p>Suatu fungsi yang dapat memetakan suatu ruang vektor ke ruang vektor yang lain, sehingga operasi standar pada ruang vektor (penjumlahan dan perkalian dengan skalar) tetap berlaku.</p>
+<section id="definisi">
+<h3>Definisi<a class="headerlink" href="#definisi" title="Link to this heading">#</a></h3>
+<p>Transformasi linear merupakan dasar dalam aljabar linear yang berbentuk fungsi. Transformasi linear yang dimaksud adalah perpindahan dari satu ruang yang biasa dinamakan dengan domain ke ruang lain yang dinamakan kodomain.</p>
+<p>Transformasi Linear Umum
+Transformasi (pemetaan atau fungsi) T dari V (domain) ke W
+(kodomain) dituliskan :</p>
+<p>T : V → W</p>
+<p>Keterangan</p>
+<p>V : ruang vektor V
+W : ruang vektor W
+T : transformasi
+𝑣 : variabel tak bebas
+𝑤 : variabel bebas</p>
+<p>Transformasi 𝑇 ∶ 𝑉 → 𝑊 disebut transformasi linear jika :</p>
+<ol class="arabic simple">
+<li><p>𝑇(𝑢 + 𝑣) = 𝑇(𝑢) + 𝑇(𝑣) untuk semua 𝑢 dan 𝑣 dalam 𝑉</p></li>
+<li><p>𝑇(𝑘𝑢) = 𝑘𝑇(𝑢) untuk semua 𝑢 dalam 𝑉 dan skalar �</p></li>
+</ol>
+<p>contoh pembuktian<br />
+Tranformasi : Ruang 2D ke 1D</p>
+<p>Penyelesaian. <span class="math notranslate nohighlight">\(T: R^2 \rightarrow R\)</span>
 $<span class="math notranslate nohighlight">\(
-(A−2I)v\=(4−22​13−2​)(v1​v2​​)\=(22​11​)(v1​v2​​)\=(00​)
+(x, y) \rightarrow(2+3 x-y)
 \)</span>$</p>
-<p>Persamaan ini menghasilkan sistem linear:</p>
+<p>Misalkan <span class="math notranslate nohighlight">\(u=\left(x_1, y_1\right)\)</span> dan <span class="math notranslate nohighlight">\(v=\left(x_2, y_2\right)\)</span>
+1.
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+T(u+v) &amp; =\left(\left(x_1, y_1\right)+\left(x_2, y_2\right)\right) \\
+&amp; =T\left(x_1+x_2, y_1+y_2\right) \\
+&amp; =\left(2+3\left(x_1+x_2\right)-\left(y_1+y_2\right)\right) \\
+&amp; =\left(2+3 x_1+3 x_2-y_1-y_2\right) \\
+&amp; =2+3 x_1-y_1+3 x_2-y_2 \\
+&amp; =T\left(2+3 x_1-y_1\right)+T\left(3 x_2-y_2\right) \\
+&amp; =T(u)+T\left(3 x_2-y_2\right) \\
+&amp; T\left(3 x_2-y_2\right) \neq T(v)
+\end{aligned}
+\)</span><span class="math notranslate nohighlight">\(
+2. \)</span>T(k u)=T\left(2 k+3 k x_1-k y_1\right)<span class="math notranslate nohighlight">\(
+\)</span><span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; =k T\left(2+3 x_1-y_1\right) \\
+&amp; =k T(u)
+\end{aligned}
+\)</span>$</p>
+</section>
+<section id="transformasi-linier-dalam-bentuk-matrik">
+<h3>Transformasi linier Dalam bentuk matrik<a class="headerlink" href="#transformasi-linier-dalam-bentuk-matrik" title="Link to this heading">#</a></h3>
+<p>Matrik A</p>
 <div class="math notranslate nohighlight">
-\[
-2v1​+v2​\=02v1​+v2​\=0​
-\]</div>
-<p>Yang berarti $<span class="math notranslate nohighlight">\(v2\=−2v1v\_2 = -2v\_1v2​\=−2v1​. Jadi, eigenvektor yang sesuai dengan λ\=2 \)</span>$ adalah</p>
+\[\begin{split}
+\begin{equation}
+T\left(\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right]\right)=\left[\begin{array}{c}
+-2 \\
+0
+\end{array}\right], \quad T\left(\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]\right)=\left[\begin{array}{c}
+-2 \\
+2
+\end{array}\right]
+\end{equation}
+\end{split}\]</div>
+<p>Langkah-langkah untuk menyelesaikan masalah ini adalah :</p>
+<ol class="arabic simple">
+<li><p>Misalkan Bentuk Umum Matriks Transformasi ( A ):
+$<span class="math notranslate nohighlight">\(
+\begin{bmatrix} a &amp; b \\ c &amp; d \end{bmatrix}
+\)</span>$</p></li>
+<li><p>Gunakan Informasi Transformasi untuk Menentukan ( A ): Kita tahu bahwa <span class="math notranslate nohighlight">\(T(x)=A x\)</span>. Maka, kita dapat menuliskan:
+$<span class="math notranslate nohighlight">\(
+T\left(\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right]\right)=A\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right]=\left[\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right]\left[\begin{array}{l}
+2 \\
+0
+\end{array}\right]=\left[\begin{array}{l}
+2 a \\
+2 c
+\end{array}\right]
+\)</span>$</p></li>
+</ol>
+<p>Dari sini, kita mendapatkan persamaan:
+$<span class="math notranslate nohighlight">\(
+\left\lfloor\begin{array}{l}
+2 a \\
+2 c
+\end{array}\right]
+\)</span><span class="math notranslate nohighlight">\(
+3. Gunakan Informasi Transformasi Kedua:
+\)</span><span class="math notranslate nohighlight">\(
+T\left(\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]\right)=A\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]=\left[\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right]\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]=\left[\begin{array}{l}
+2 a+2 b \\
+2 c+2 d
+\end{array}\right]
+\)</span>$</p>
+<ol class="arabic simple" start="3">
+<li><p>Gunakan Informasi Transformasi Kedua:
+$<span class="math notranslate nohighlight">\(
+T\left(\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]\right)=A\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]=\left[\begin{array}{ll}
+a &amp; b \\
+c &amp; d
+\end{array}\right]\left[\begin{array}{l}
+2 \\
+2
+\end{array}\right]=\left[\begin{array}{l}
+2 a+2 b \\
+2 c+2 d
+\end{array}\right]
+\)</span><span class="math notranslate nohighlight">\(
+dari sini, kita mendapatkan persamaan:
+\)</span><span class="math notranslate nohighlight">\(
+\left\lfloor\begin{array}{l}
+2 a+2 b \\
+2 c+2 d
+\end{array}\right\rfloor
+\)</span>$</p></li>
+<li><p>Tentukan Matriks Transformasi ( A ): <span class="math notranslate nohighlight">\(\$\)</span> Dengan <span class="math notranslate nohighlight">\(a=-1, b=0, c=0\)</span>, dan <span class="math notranslate nohighlight">\(d=1 \$\)</span>, kita mendapatkan: <span class="math notranslate nohighlight">\(\square\)</span>
+$<span class="math notranslate nohighlight">\(
+\begin{aligned}
+&amp; A=\square\left[\begin{array}{cc}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{array}\right]
+\end{aligned}
+\)</span>$
+jadi, matriks transformasi ( A ) yang memenuhi syarat-syarat yang diberikan adalah:</p></li>
+</ol>
 <div class="math notranslate nohighlight">
-\[
-v2​\=k(1−2​)untuk sembarang k\=0
-\]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Definisikan matriks A</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-
-<span class="c1"># Hitung eigenvalue dan eigenvektor</span>
-<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvalue</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvektor</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvektor:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalue:
-[5. 2.]
-Eigenvektor:
-[[ 0.70710678 -0.4472136 ]
- [ 0.70710678  0.89442719]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>contoh 3 x 3</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># Definisikan matriks A</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-              <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-
-<span class="c1"># Hitung eigenvalue dan eigenvektor</span>
-<span class="n">eigenvalues</span><span class="p">,</span> <span class="n">eigenvectors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvalue</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvalue:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvalues</span><span class="p">)</span>
-
-<span class="c1"># Cetak eigenvektor</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Eigenvektor:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">eigenvectors</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Eigenvalue:
-[6.38417273+0.j         1.80791363+0.80460079j 1.80791363-0.80460079j]
-Eigenvektor:
-[[ 0.66145094+0.j         -0.39996437-0.35287656j -0.39996437+0.35287656j]
- [ 0.54359285+0.j         -0.20787801+0.45172424j -0.20787801-0.45172424j]
- [ 0.51671023+0.j          0.68427961+0.j          0.68427961-0.j        ]]
-</pre></div>
-</div>
-</div>
-</div>
-<p>Ref : Laily Sabrina Hapsari
-<a class="reference external" href="https://rpubs.com/bokuwalily/1051528">https://rpubs.com/bokuwalily/1051528</a></p>
+\[ \begin{align}\begin{aligned} A=\\\begin{split}\begin{bmatrix} -1 &amp; 0 \\ 0 &amp; 1 \end{bmatrix}
+\end{split}\end{aligned}\end{align} \]</div>
+</section>
+</section>
+<section id="refleksi-transformasi-linier">
+<h2>Refleksi Transformasi Linier<a class="headerlink" href="#refleksi-transformasi-linier" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h3>Konsep<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Refleksi dalam transformasi linier dapat direpresentasikan dengan menggunakan matriks transformasi. Ada beberapa jenis refleksi yang bisa dilakukan terhadap suatu titik dalam bidang 2D, tergantung pada garis atau sumbu yang digunakan sebagai referensi untuk refleksi.</p>
+<ol class="arabic simple">
+<li><p>Pencerminan terhadap sumbu X:
+$<span class="math notranslate nohighlight">\(
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
+\)</span>$</p></li>
+<li><p>Refleksi terhadap sumbu y:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+-1 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\end{split}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Refleksi terhadap garis 𝑦 = 𝑥:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Refleksi terhadap garis 𝑦 = −𝑥:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+0 &amp; -1 \\
+-1 &amp; 0
+\end{pmatrix}
+\end{split}\]</div>
+<p>Untuk menerapkan refleksi ini pada titik (𝑥,𝑦) Anda dapat menuliskannya dalam LaTeX sebagai berikut:</p>
+<p>Misalkan titik (𝑥,𝑦) dinyatakan sebagai vektor kolom:
+$<span class="math notranslate nohighlight">\(
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+\)</span>$</p>
+<p>Jika kita ingin merefleksikan titik tersebut terhadap sumbu x, kita kalikan dengan matriks refleksi terhadap sumbu x:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
+\begin{pmatrix}
+x \\
+y
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \cdot x + 0 \cdot y \\
+0 \cdot x + (-1) \cdot y
+\end{pmatrix}
+=
+\begin{pmatrix}
+x \\
+-y
+\end{pmatrix}
+\end{split}\]</div>
+<p>Ref:</p>
+<p>[1]Ria Anggraeni Syafnuri (<a class="reference external" href="https://www.researchgate.net/profile/Netriwati-Netriwati/publication/330533940_Modul_Transformasi_Linear_dengan_Model_Pembelajaran_Knisley/links/5c46bdd3299bf12be3d9fc2f/Modul-Transformasi-Linear-dengan-Model-Pembelajaran-Knisley.pdf">https://www.researchgate.net/profile/Netriwati-Netriwati/publication/330533940_Modul_Transformasi_Linear_dengan_Model_Pembelajaran_Knisley/links/5c46bdd3299bf12be3d9fc2f/Modul-Transformasi-Linear-dengan-Model-Pembelajaran-Knisley.pdf</a>)</p>
+<p>[2]Ken Kuttler (<a class="reference external" href="https://math.libretexts.org/Courses/Lake_Tahoe_Community_College/A_First_Course_in_Linear_Algebra_(Kuttler)/05%3A_Linear_Transformations/5.01%3A_Linear_Transformations">https://math.libretexts.org/Courses/Lake_Tahoe_Community_College/A_First_Course_in_Linear_Algebra_(Kuttler)/05%3A_Linear_Transformations/5.01%3A_Linear_Transformations</a>)</p>
+<p>[3] <a class="reference external" href="https://lms-paralel.esaunggul.ac.id/pluginfile.php?file=/362843/mod_resource/content/1/transformasi-linier+pertemuan+10+online+8-1.pdf">https://lms-paralel.esaunggul.ac.id/pluginfile.php?file=/362843/mod_resource/content/1/transformasi-linier+pertemuan+10+online+8-1.pdf</a></p>
+<p>[4] Anita T. Kurniawati (<a class="reference external" href="https://dosen.itats.ac.id/anitateku/wp-content/uploads/sites/17/2015/11/5.-TRANSFORMASI-LINIER_new.pdf">https://dosen.itats.ac.id/anitateku/wp-content/uploads/sites/17/2015/11/5.-TRANSFORMASI-LINIER_new.pdf</a>)</p>
 </section>
 </section>
 </section>
@@ -672,22 +711,13 @@ Eigenvektor:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="Determinan%20Matriks.html"
+       href="Eigen%20Value%20dan%20Vektor.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Determinan Matriks</p>
+        <p class="prev-next-title">Eigen Value dan Eigen Vektor</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="Transformasi%20linier.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Transformasi Linier</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -705,10 +735,13 @@ Eigenvektor:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">Konsep</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#contoh-hitung-eigenvalue-dan-eigenvektor">Contoh hitung EigenValue dan EigenVektor</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matrik-2-x-2">Matrik 2 x 2</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cara-menemukan-eiganvektor">cara menemukan EiganVektor</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#konsep">konsep</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definisi">Definisi</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#transformasi-linier-dalam-bentuk-matrik">Transformasi linier Dalam bentuk matrik</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#refleksi-transformasi-linier">Refleksi Transformasi Linier</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Konsep</a></li>
 </ul>
 </li>
 </ul>
